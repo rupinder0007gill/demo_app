@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User < ApplicationRecord
+class Role < ApplicationRecord
   ##############################################################################
   ### Attributes ###############################################################
 
@@ -9,52 +9,46 @@ class User < ApplicationRecord
 
   ##############################################################################
   ### Includes and Extensions ##################################################
-  # Include default devise modules. Others available are:
-  # :confirmable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable,
-         :recoverable, :rememberable, :validatable, :lockable
 
   ##############################################################################
   ### Callbacks ################################################################
-  after_create :assign_default_role
 
   ##############################################################################
   ### Associations #############################################################
+  has_and_belongs_to_many :users, join_table: :users_roles
+
+  belongs_to :resource,
+             polymorphic: true,
+             optional: true
 
   ##############################################################################
   ### Validations ##############################################################
-  validates :email, uniqueness: true, presence: true
-  validates :first_name, presence: true
+  validates :resource_type,
+            inclusion: { in: Rolify.resource_types },
+            allow_nil: true
 
   ##############################################################################
   ### Scopes ###################################################################
+  scopify
 
   ##############################################################################
   ### Other ####################################################################
-  rolify
-  has_person_name
 
   ##############################################################################
   ### Class Methods ############################################################
 
   ##############################################################################
   ### Instance Methods #########################################################
-  # discarded users to be unable to login and stop their session
-  def active_for_authentication?
-    super && !discarded? && !suspended
-  end
 
   #########
+
+  # protected
 
   #########
 
   #######
 
-  private
-
-  def assign_default_role
-    add_role(:'Customer support') if roles.blank?
-  end
+  # private
 
   #######
 end
