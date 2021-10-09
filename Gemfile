@@ -60,6 +60,10 @@ gem 'webpacker', '~> 5.4', '>= 5.4.3'
 # Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.2', '>= 5.2.1'
 
+# will_paginate provides a simple API for performing paginated queries with Active Record, DataMapper and Sequel
+# Read more: https://github.com/mislav/will_paginate
+gem 'will_paginate', '~> 3.3', '>= 3.3.1'
+
 group :development, :test do
   # help to kill N+1 queries and unused eager loading
   # Read more: https://github.com/flyerhzm/bullet

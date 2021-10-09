@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   ##############################################################################
   ### Constants ################################################################
+  self.per_page = 10
 
   ##############################################################################
   ### Includes and Extensions ##################################################
@@ -41,7 +42,7 @@ class User < ApplicationRecord
   ### Instance Methods #########################################################
   # discarded users to be unable to login and stop their session
   def active_for_authentication?
-    super && !discarded? && !suspended
+    super && !discarded?
   end
 
   #########
