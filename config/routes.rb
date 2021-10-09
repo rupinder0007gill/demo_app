@@ -7,5 +7,6 @@ Rails.application.routes.draw do
                sessions: 'users/sessions',
                passwords: 'users/passwords'
              }
-  root to: 'home#index'
+  resources :users, only: %i[index edit update]
+  root to: 'users#index'
 end

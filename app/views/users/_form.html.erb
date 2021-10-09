@@ -1,0 +1,30 @@
+<%= form_with(model: @user, url: url, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div class='alert alert-danger alert-dismissible fade show' role="alert">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>              
+          <li><%= message %> </li>
+        <% end %>
+      </ul>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+  <div class="row g-3">
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Name</label>
+      <%=  form.text_field :name, autofocus: true, class: "form-control form-control-lg", disabled: 'disabled' %>
+    </div>
+    <div class="col-md-12">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <%= form.email_field :email, autocomplete: "email", class: "form-control form-control-lg", disabled: 'disabled' %>
+    </div>
+
+    <div class="col-12">
+      <%= form.select(:role_id, roles_for_select, { include_blank: 'Select Role', selected: (@user.roles.first.id rescue '') }, class: "form-select") %>
+    </div>
+   </div>
+  <div class="col-12 my-3">
+    <%= form.submit "Update", class: 'btn btn-primary' %>
+    <%= link_to "Cancel", users_path, class: 'btn btn-danger' %>
+  </div>
+<% end %>
