@@ -29,6 +29,16 @@ gem 'jbuilder', '~> 2.11', '>= 2.11.2'
 # Read more: https://github.com/basecamp/name_of_person
 gem 'name_of_person', '~> 1.1', '>= 1.1.1'
 
+# A generalized Rack framework for multiple-provider authentication.
+# Read more: https://github.com/omniauth/omniauth
+gem 'omniauth', '~> 2.0', '>= 2.0.4'
+
+# A Google OAuth2 strategy for OmniAuth 1.x. This allows you to login to Google with your ruby app.
+# Read more: https://github.com/zquestz/omniauth-google-oauth2
+gem 'omniauth-google-oauth2', '~> 1.0'
+
+gem 'omniauth-rails_csrf_protection'
+
 # Use postgresql as the database for Active Record
 # Read more: http://deveiate.org/code/pg/
 gem 'pg', '~> 1.2', '>= 1.2.3'

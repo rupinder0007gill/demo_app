@@ -22,6 +22,21 @@ module Users
     #   super
     # end
 
+    def google
+      # Get access tokens from the google server
+      access_token = request.env["omniauth.auth"]
+      user = User.from_omniauth_google(access_token)
+      # Access_token is used to authenticate request made from the rails application to the google server
+      user.token = access_token.credentials.token
+      # Refresh_token to request new access_token
+      # Note: Refresh_token is only sent once during the first request
+      refresh_token = access_token.credentials.refresh_token
+      user.refresh_token = refresh_token if refresh_token.present?
+      user.save
+      sign_in(:user, user)
+      redirect_to root_path
+    end
+
     # protected
 
     # The path used when OmniAuth fails
