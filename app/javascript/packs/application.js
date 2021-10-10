@@ -3,14 +3,14 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import 'bootstrap'
+import 'bootstrap';
 
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("channels")
+require("@rails/ujs").start();
+require("turbolinks").start();
+require("channels");
 
 require('jquery');
 
-import "@fortawesome/fontawesome-free/css/all"
+import "@fortawesome/fontawesome-free/css/all";
 // Sub-directories
-import "../stylesheets/application"
+// import "../stylesheets/application";
