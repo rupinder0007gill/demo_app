@@ -1,0 +1,225 @@
+<%= form_with(model: @order, url: url, local: true) do |form| %>
+  <% if @order.errors.any? %>
+    <div class='alert alert-danger alert-dismissible fade show' role="alert">
+      <ul>
+        <% @order.errors.full_messages.each do |message| %>              
+          <li><%= message %> </li>
+        <% end %>
+      </ul>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :order_id, class: 'form-label' %>
+      <%=  form.text_field :order_id, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :ref_order_number, class: 'form-label' %>
+      <%= form.text_field :ref_order_number, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :purchase_date, class: 'form-label' %>
+      <%=  form.date_field :purchase_date, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :status, class: 'form-label' %>
+      <%= form.text_field :status, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :coupon_code, class: 'form-label' %>
+      <%=  form.text_field :coupon_code, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :product_id, "Product ID", class: 'form-label' %>
+      <%= form.text_field :product_id, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :product_name, class: 'form-label' %>
+      <%=  form.text_field :product_name, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :product_sku, class: 'form-label' %>
+      <%= form.text_field :product_sku, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :product_size, class: 'form-label' %>
+      <%=  form.text_field :product_size, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :total_weight, class: 'form-label' %>
+      <%= form.number_field :total_weight, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :primary_category_id, class: 'form-label' %>
+      <%=  form.text_field :primary_category_id, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :primary_category_name, class: 'form-label' %>
+      <%= form.text_field :primary_category_name, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :secondary_category_id, class: 'form-label' %>
+      <%=  form.text_field :secondary_category_id, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :secondary_category_name, class: 'form-label' %>
+      <%= form.text_field :secondary_category_name, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :leaf_category_id, class: 'form-label' %>
+      <%=  form.text_field :leaf_category_id, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :leaf_category_name, class: 'form-label' %>
+      <%= form.text_field :leaf_category_name, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :quantity, class: 'form-label' %>
+      <%=  form.number_field :quantity, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :currency, class: 'form-label' %>
+      <%= form.text_field :currency, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :item_base_price, class: 'form-label' %>
+      <%=  form.number_field :item_base_price, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :item_price, class: 'form-label' %>
+      <%= form.number_field :item_price, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :sub_total, class: 'form-label' %>
+      <%=  form.number_field :sub_total, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :discount_amount, class: 'form-label' %>
+      <%= form.number_field :discount_amount, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :tax_amount, class: 'form-label' %>
+      <%=  form.number_field :tax_amount, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :shipping_amount, class: 'form-label' %>
+      <%= form.number_field :shipping_amount, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :shipping_method, class: 'form-label' %>
+      <%=  form.text_field :shipping_method, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :region_date, class: 'form-label' %>
+      <%= form.date_field :region_date, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :grand_total, class: 'form-label' %>
+      <%=  form.number_field :grand_total, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :customer_id, class: 'form-label' %>
+      <%= form.text_field :customer_id, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :customer_name, class: 'form-label' %>
+      <%=  form.text_field :customer_name, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :customer_email, class: 'form-label' %>
+      <%= form.text_field :customer_email, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :customer_group, class: 'form-label' %>
+      <%=  form.text_field :customer_group, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :city, class: 'form-label' %>
+      <%= form.text_field :city, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :state, class: 'form-label' %>
+      <%=  form.text_field :state, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :country, class: 'form-label' %>
+      <%= form.text_field :country, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :postcode, class: 'form-label' %>
+      <%=  form.text_field :postcode, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :total_order, class: 'form-label' %>
+      <%= form.number_field :total_order, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <%= form.label :total_revenue, class: 'form-label' %>
+      <%=  form.number_field :total_revenue, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-6">
+      <%= form.label :payment_method, class: 'form-label' %>
+      <%= form.text_field :payment_method, class: "form-control form-control-lg" %>
+    </div>
+  </div>
+
+  <div class="col-12 my-3">
+    <%= form.submit "Update", class: 'btn btn-primary' %>
+    <%= link_to "Cancel", users_path, class: 'btn btn-danger' %>
+  </div>
+<% end %>

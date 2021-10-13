@@ -1,0 +1,178 @@
+<div class="container p-3 border rounded bg-light my-3">
+  <h1 class="text-center">Order Details</h1>
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Order Id</label> : <%= @order.order_id %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Ref Order number</label> : <%= @order.ref_order_number %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Purchase Date</label> : <%= @order.purchase_date %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Status</label> : <%= @order.status %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Coupon Code</label> : <%= @order.coupon_code %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Product Id</label> : <%= @order.product_id %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Product Name</label> : <%= @order.product_name %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Product Sku</label> : <%= @order.product_sku %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Product Size</label> : <%= @order.product_size %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Total Weight</label> : <%= @order.total_weight %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Primary Category Id</label> : <%= @order.primary_category_id %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Primary Category Name</label> : <%= @order.primary_category_name %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Secondary Category Id</label> : <%= @order.secondary_category_id %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Secondary Category Name</label> : <%= @order.secondary_category_name %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Leaf Category Id</label> : <%= @order.leaf_category_id %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Leaf Category Name</label> : <%= @order.leaf_category_name %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Quantity</label> : <%= @order.quantity %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Currency</label> : <%= @order.currency %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Item Base Price</label> : <%= @order.item_base_price %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Item Price</label> : <%= @order.item_price %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Sub Total</label> : <%= @order.sub_total %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Discount Amount</label> : <%= @order.discount_amount %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Tax Amount</label> : <%= @order.tax_amount %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Shipping Amount</label> : <%= @order.shipping_amount %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Shipping Method</label> : <%= @order.shipping_method %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Region Date</label> : <%= @order.region_date %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Grand Total</label> : <%= @order.grand_total %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Customer Id</label> : <%= @order.customer_id %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Customer Name</label> : <%= @order.customer_name %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Customer Email</label> : <%= @order.customer_email %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Customer Group</label> : <%= @order.customer_group %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">City</label> : <%= @order.city %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">State</label> : <%= @order.state %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Country</label> : <%= @order.country %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">PostCode</label> : <%= @order.postcode %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Total Order</label> : <%= @order.total_order %>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-6">
+      <label class="form-label">Total Revenue</label> : <%= @order.total_revenue %>
+    </div>
+    <div class="col-6">
+      <label class="form-label">Payment Method</label> : <%= @order.payment_method %>
+    </div>
+
+    <div class="col-12 my-3">
+      <%= link_to "Edit", edit_order_path(@order), class: 'btn btn-primary' %>
+      <%= link_to "Cancel", users_path, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

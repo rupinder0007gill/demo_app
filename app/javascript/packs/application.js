@@ -13,4 +13,4 @@ require('jquery');
 
 import "@fortawesome/fontawesome-free/css/all";
 // Sub-directories
-// import "../stylesheets/application";
+import "../stylesheets/application";

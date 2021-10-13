@@ -1,0 +1,46 @@
+<div class="container p-3 my-3">
+  <h1>All Orders</h1>
+  <div class="row">
+    <div class="col-12 text-end">
+      <%= link_to 'Import Orders', new_orders_import_path, class: 'btn btn-primary' %>
+      <%= link_to 'New Order', new_order_path, class: 'btn btn-primary' %>
+    </div>
+    <div class="col-12 flickr_pagination mb-4 text-end">
+      <div class="page_info">
+        <%= page_entries_info @orders %>
+      </div>
+      <%= will_paginate @orders, :container => false %>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Order Id</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Purchase Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.order_id %></td>
+          <td><%= order.product_name %></td>
+          <td><%= order.purchase_date.strftime("%d-%m-%Y") rescue '' %></td>
+          <td>
+            <%= link_to 'Show', order_path(order) %>
+            <%= link_to 'Edit', edit_order_path(order) %>
+            <%= link_to 'Destroy', order_path(order), method: :delete, data: {confirm: "Are you sure?"} %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="flickr_pagination mb-5 float-end">
+    <div class="page_info">
+      <%= page_entries_info @orders %>
+    </div>
+    <%= will_paginate @orders, :container => false %>
+  </div>
+</div>

@@ -58,6 +58,10 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Read more: https://github.com/RolifyCommunity/rolify
 gem 'rolify', '~> 6.0'
 
+# Roo can access the contents of various spreadsheet files. It can handle * OpenOffice * Excelx * LibreOffice * CSV
+#  Read more: https://github.com/roo-rb/roo
+gem 'roo', '~> 2.8', '>= 2.8.3'
+
 # Use SCSS for stylesheets
 # Read more: https://github.com/rails/sass-rails
 gem 'sass-rails', '~> 6.0'
@@ -65,6 +69,10 @@ gem 'sass-rails', '~> 6.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.4', '>= 5.4.3'
+
+# will_paginate provides a simple API for performing paginated queries with Active Record, DataMapper and Sequel, and includes helpers for rendering pagination links in Rails
+# Read more: https://github.com/mislav/will_paginate
+gem 'will_paginate', '~> 3.3', '>= 3.3.1'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # Read more: https://github.com/turbolinks/turbolinks

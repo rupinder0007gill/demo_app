@@ -8,7 +8,18 @@ class Ability
     #
     #   user ||= User.new # guest user (not logged in)
     can :read, User
-    can :update, User if user.has_role?(:'Super Admin')
+    if user.has_role?(:'Super Admin')
+      can :update, User
+      can :manage, Order
+    elsif user.has_role?(:Admin)
+      can :create, Order
+      can :update, Order
+      can :read, Order
+    elsif user.has_role?(:Designers)
+      can :create, Order
+    elsif user.has_role?(:'Customer support')
+      can :read, Order
+    end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

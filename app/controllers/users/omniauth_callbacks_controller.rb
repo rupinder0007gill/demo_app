@@ -24,7 +24,7 @@ module Users
 
     def google
       # Get access tokens from the google server
-      access_token = request.env["omniauth.auth"]
+      access_token = request.env['omniauth.auth']
       user = User.from_omniauth_google(access_token)
       # Access_token is used to authenticate request made from the rails application to the google server
       user.token = access_token.credentials.token

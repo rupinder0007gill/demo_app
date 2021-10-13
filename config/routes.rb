@@ -9,5 +9,7 @@ Rails.application.routes.draw do
                omniauth_callbacks: 'users/omniauth_callbacks'
              }
   resources :users, only: %i[index edit update]
+  resources :orders
+  resources :orders_imports, only: %i[new create]
   root to: 'users#index'
 end

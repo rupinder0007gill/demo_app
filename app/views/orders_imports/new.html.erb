@@ -1,0 +1,25 @@
+<div class="container p-3 border rounded bg-light my-3">
+  <h1 class="text-center">Import Items From Excel</h1>
+  <%= form_with(model: @orders_import, url: orders_imports_path, local: true) do |form| %>
+    <% if @orders_import.errors.any? %>
+      <div class='alert alert-danger alert-dismissible fade show' role="alert">
+        <ul>
+          <% @orders_import.errors.full_messages.each do |message| %>              
+            <li><%= message %> </li>
+          <% end %>
+        </ul>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+    <div class="row g-3">
+      <div class="col-md-12">
+        <%= form.label :file, class: 'form-label' %>
+        <%= form.file_field :file, class: "form-control form-control-lg" %>
+      </div>
+     </div>
+    <div class="col-12 my-3">
+      <%= form.submit "Save", class: 'btn btn-primary' %>
+      <%= link_to "Cancel", orders_path, class: 'btn btn-danger' %>
+    </div>
+  <% end %>
+</div>
